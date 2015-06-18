@@ -1,0 +1,22 @@
+{
+  "name": "kit-colors",
+  "version": "0.0.1",
+  "authors": [
+    "Dani Postigo <dani.postigo@gmail.com>"
+  ],
+  "description": "kit colors",
+  "main": "less/kit-colors.less",
+  "keywords": [
+    "less",
+    "css",
+    "colors"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
