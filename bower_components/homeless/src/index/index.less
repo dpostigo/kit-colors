@@ -1,0 +1,19 @@
+@import '../each';
+
+/// @name index
+/// @description
+///   find index of keyword
+/// @argument {Array}    @list     List to iterate
+/// @argument {Keyword}  @keyword  Keyword to find
+
+.index(@list, @keyword) {
+ .fallback() {
+    @return: -1;
+  }
+  .each(@list, {
+    .callback(~'@{keyword}',@index) {
+      @return: @index;
+    }
+  });
+  .fallback;
+}

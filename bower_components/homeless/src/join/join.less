@@ -1,0 +1,24 @@
+/// @name join
+/// @description
+///   repeat a string with an optional glue
+/// @argument {String} @list      the list to join
+/// @argument {String} @glue      string to use as a glue (optional)
+/// @argument {Rule}   @callback  Calls the content of the loop
+
+.join(...) {}
+.join(@list, @callback) {
+  .join(@list, '', @callback);
+}
+.join(@list, @glue, @callback) {
+  .join(@string, @list, @glue, @n, @callback) when (@n >= 0) {
+    .return(@return, @n) when (@n = 0) {
+      @callback();
+    }
+    .return(e(@string), @n);
+    @add: extract(@list, @n);
+    .join('@{add}@{glue}@{string}', @list, @glue, (@n - 1), @callback);
+
+  }
+  @string: extract(@list, length(@list));
+  .join(@string, @list, @glue, (length(@list) - 1), @callback);
+}

@@ -1,0 +1,10 @@
+@import 'for';
+
+.for(3, {.callback(@i) {
+  .for(3, {.callback(@j) {
+    .item-@{i}-@{j} {
+      i: @i;
+      j: @j;
+    }
+  }});
+}});

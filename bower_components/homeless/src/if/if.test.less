@@ -1,0 +1,94 @@
+@import 'if';
+
+.if(isnumber(2), {
+  .then(){
+    test {
+      bool: "pass";
+    }
+  }
+  .else(){
+    test {
+      bool: "fail";
+    }
+  }
+});
+
+.if(true, {
+  .then(){
+    test {
+      bool: "pass";
+    }
+  }
+  .else(){
+    test {
+      bool: "fail";
+    }
+  }
+});
+
+.if(false, {
+  .then(){
+    test {
+      bool: "fail";
+    }
+  }
+  .else(){
+    test {
+      bool: "pass";
+    }
+  }
+});
+
+
+.if(1 gt 2, {
+  .then(){
+    test {
+      gt: "fail";
+    }
+  }
+  .else () {
+    test {
+      gt: "pass";
+    }
+
+  }
+});
+
+.if(1 lte 2, {
+  .then(){
+    test {
+      lte: "pass";
+    }
+  }
+  .else(){
+    test {
+      lte: "fail";
+    }
+  }
+});
+
+.if(lightness(#fff) gt (20% * 2), {
+  .then(){
+    test {
+      gt: "pass";
+    }
+  }
+  .else(){
+    test {
+      gt: "fail";
+    }
+  }
+});
+
+.if(1 neq 2, {
+  .then(){
+    test {
+      neq: "pass";
+    }
+  }
+  .else(){
+    test {
+      neq: "fail";
+    }
+  }
+});

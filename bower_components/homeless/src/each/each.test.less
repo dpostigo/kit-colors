@@ -1,0 +1,23 @@
+@import 'each';
+
+@list: 'a', 'b', 'c';
+.each(@list, {.callback(@item, @index) {
+  .@{item} {
+    item: @item;
+    index: @index;
+  }
+}});
+
+@fruits: 'apple', 'banana', 'orange', 'pear';
+.each(@fruits, {.callback(@fruit, @index) {
+  .@{fruit} {
+    fruit: @fruit;
+  }
+}});
+
+@animals: 'dog', 'cat', 'rabbit';
+.each(@animals, {.callback(@animal) {
+  .@{animal} {
+    animal: @animal;
+  }
+}});

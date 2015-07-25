@@ -1,0 +1,21 @@
+@import 'index';
+
+@fruits: apple, banana, orange;
+
+.test {
+  .index(@fruits, apple);
+  apple: @return;
+}
+.test {
+  .index(@fruits, banana);
+  banana: @return;
+}
+.test {
+  .index(@fruits, orange);
+  orange: @return;
+}
+
+.test {
+  .index(@fruits, tomato);
+  tomato: @return;
+}

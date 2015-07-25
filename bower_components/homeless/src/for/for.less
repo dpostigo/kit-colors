@@ -1,0 +1,19 @@
+/// @name for
+/// @description
+///   provides for loops
+/// @argument {Integer} @i         Start of iterations (optional)
+/// @argument {Integer} @n         End or number of iterations
+/// @argument {Rule}    @callback  Calls the content of the loop
+
+.for(@i, @n, @callback) {
+  @callback();
+  .callback(@i)
+}
+
+.for(@n, @callback) when (isnumber(@n)) {
+  .for(0, @n, @callback)
+}
+
+.for(@i, @n, @callback) when not (@i = @n - 1) {
+  .for((@i + ((@n - @i) / abs(@n - @i))), @n, @callback)
+}

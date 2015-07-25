@@ -1,0 +1,22 @@
+/// @name repeat
+/// @description
+///   repeat a string with an optional glue
+/// @argument {String} @string  the string to repeat
+/// @argument {Srting} @glue    string to use as a glue
+/// @argument {Number} @n       number of repeats
+
+.repeat(...) {}
+.repeat(@string, @n, @callback) {
+  .repeat(@string, '', @n, @callback);
+}
+.repeat(@string, @glue, @n, @callback) {
+  .repeat(@string, @add, @glue, @n, @callback) when (@n > 0) {
+    .return(@return, @n) when (@n = 1) {
+      @callback();
+    }
+    .return(e(@string), @n);
+    .repeat('@{string}@{glue}@{add}', @add, @glue, @n - 1, @callback);
+  }
+  .repeat(@string, @string, @glue, @n, @callback);
+}
+.repeat(@string, @glue, @n, @callback) when (@n < 1) {}

@@ -1,0 +1,28 @@
+{
+  "name": "homeless",
+  "version": "1.4.1",
+  "homepage": "http://pixelass.github.io/homeless/",
+  "authors": [
+    "Gregor Adams <greg@pixelass.com>"
+  ],
+  "description": "helpers for \"Less\" (fortunate) developers",
+  "main": "Gruntfile.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "1.4.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.4.1",
+    "commit": "8761538c320a8987e9cac9ab7a5476583dcd1cb7"
+  },
+  "_source": "git://github.com/pixelass/homeless.git",
+  "_target": "~1.4.1",
+  "_originalSource": "homeless",
+  "_direct": true
+}
