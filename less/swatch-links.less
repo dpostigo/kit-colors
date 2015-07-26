@@ -1,0 +1,12 @@
+
+
+.kit-link-swatches(@list...) {
+
+	.each(@list, {.callback(@item, @index) {
+		@name: extract(@item, 1);
+		.link-@{name} a { 
+			color: extract(@item, 2); 
+		}
+	}});
+
+}

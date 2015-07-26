@@ -1,14 +1,24 @@
 
 
 .kit-swatches(@list...) {
+	// Bg colors
 	.each(@list, {.callback(@item, @index) {
 		@name: extract(@item, 1);
 		.bg-@{name} { background-color: extract(@item, 2); }
 	}});
 
+	// Text colors
 	.each(@list, {.callback(@item, @index) {
 		@name: extract(@item, 1);
 		.@{name} { color: extract(@item, 2); }
+	}});
+
+	// Link colors
+	.each(@list, {.callback(@item, @index) {
+		@name: extract(@item, 1);
+		.link-@{name} a { 
+			color: extract(@item, 2); 
+		}
 	}});
 
 }
