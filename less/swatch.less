@@ -1,0 +1,14 @@
+
+
+.kit-swatches(@list...) {
+	.each(@list, {.callback(@item, @index) {
+		@name: extract(@item, 1);
+		.bg-@{name} { background-color: extract(@item, 2); }
+	}});
+
+	.each(@list, {.callback(@item, @index) {
+		@name: extract(@item, 1);
+		.@{name} { color: extract(@item, 2); }
+	}});
+
+}
