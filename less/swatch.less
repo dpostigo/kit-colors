@@ -1,24 +1,30 @@
 
+.kit-swatch(@list) {
+	@name: extract(@list, 1);
+	@color: extract(@list, 2);
+	.kit-bg(@name, @color);
+	.kit-color(@name, @color);
+	.kit-link(@name, @color);
+}
 
 .kit-swatches(@list...) {
 	// Bg colors
 	.each(@list, {.callback(@item, @index) {
-		@name: extract(@item, 1);
-		.bg-@{name} { background-color: extract(@item, 2); }
+		.kit-bg(extract(@item, 1), extract(@item, 2));
 	}});
 
 	// Text colors
 	.each(@list, {.callback(@item, @index) {
-		@name: extract(@item, 1);
-		.@{name} { color: extract(@item, 2); }
+		.kit-color(extract(@item, 1), extract(@item, 2));
 	}});
 
 	// Link colors
 	.each(@list, {.callback(@item, @index) {
-		@name: extract(@item, 1);
-		.link-@{name} a { 
-			color: extract(@item, 2); 
-		}
+		.kit-link(extract(@item, 1), extract(@item, 2));
 	}});
 
 }
+
+.kit-bg(@name, @color) 		{ .bg-@{name} 		{ background-color: @color; } }
+.kit-color(@name, @color) 	{ .@{name} 			{ color: @color; } }
+.kit-link(@name, @color) 	{ .link-@{name} a 	{ color: @color; } }

@@ -1,0 +1,9 @@
+@darks:
+	dark-10		fade(black, 10);
+
+.for(10, {.callback(@i) {
+	@value: @i * 10;
+	.kit-color(~'dark-@{value}', fade(black, (@i * 10)));
+}});
+
+
