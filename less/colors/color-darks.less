@@ -1,9 +1,16 @@
 @darks:
-	dark-10		fade(black, 10);
+	dark10		fade(black, 10),
+	dark20		fade(black, 20),
+	dark30		fade(black, 30),
+	dark30		fade(black, 30),
+	dark40		fade(black, 40),
+	dark50		fade(black, 50),
+	dark60		fade(black, 60),
+	dark70		fade(black, 70),
+	dark80		fade(black, 80),
+	dark90		fade(black, 90);
 
-.for(10, {.callback(@i) {
-	@value: @i * 10;
-	.kit-color(~'dark-@{value}', fade(black, (@i * 10)));
-}});
 
+
+.kit-swatches(@darks); 
 

@@ -1,0 +1,178 @@
+
+// .kit-link(@name, @color) 	{ 
+// 	.link-@{name} a { 
+// 		color: @color; 
+// 	} 
+// }
+
+
+.kit-link(@name, @color) 	{ 
+	.link-@{name} a { 
+		color: @color; 
+	} 
+}
+
+
+.kit-link(@list) when (length(@list) > 2) {
+
+}
+
+
+
+
+
+// @values:
+// 	1,
+// 	2,
+// 	3;
+
+
+// // @darks:
+// // 	dark-10		fade(black, 10);
+
+// // @string: 'dark-0';
+// // .string-append(@string, 'dark-10');
+// // @string: @return;
+
+// // .mixin-return(@string);
+// // @string: @mixinValue;
+
+// // .string-join(@string, @glue, @suffix) {
+// //   @return: '@{string}@{glue}@{suffix}';
+// // }
+
+
+// // @var0: 'dark-0';
+// // @var1: 'dark-1';
+// // @var2: 'dark-2';
+// // @string: @return;
+// // // .string-join('dark-0', ' ', 'dark-1');
+// // .string-join(@var0, ' ', @var1);
+// // // .string-join(@var1, ' ', 'dark-1');
+
+
+// // @letters: a, b, c, d, e, f, g;
+// // .join(@letters, ' + ' {
+// // 	joined: @return;
+// // 	// @joined: @return;
+// // 	// .kit-link-test {
+// // 	// 	margin: @return;
+// // 	// }
+// // });
+
+
+// // @numbers: 1 2 3 4 5 6 7 8 9;
+// // .kit-link-test {
+// // 	margin: @return;
+	
+// // }
+// // .join(@numbers, ' + ', {
+// // 	// joined: @return;
+// // });
+
+// .test-function(@numbers) {
+	
+
+// 	.join(@numbers, ' + ', {
+// 		@joined: @return;
+// 		.something {
+// 			margin: @joined;
+// 		}
+// 	});
+
+
+// }
+
+// .test-function(1 2 3);
+
+// // .mixin() {
+// // 	@definedOnlyInMixin: in-mixin;
+
+// // 	@letters: a, b, c, d, e, f, g;
+// // 	// @joined: @return;
+// // 	.join(@letters, ' ', {
+// // 		@joined: @return;
+// // 	// .kit-link-test {
+// // 	// 	margin: @return;
+// // 	// }
+// // 	});
+// // }
+
+// // .kit-link-test {
+// //   // margin: @definedOnlyInMixin;
+// //   margin: @letters;
+// //   // margin: @joined;
+// //   .mixin();
+// // }
+
+// // @joined: '';
+// // .for(3, {.callback(@i) {
+// // 	@var1: @return;
+// // 	.string-join(@string, ' ', 'dark-@{i}');
+// // }});
+
+// .for(3, {.callback(@i) {
+// 	@variableName: ~'variable-@{i}';
+// 	.@{variableName} {
+// 		item: @i;
+// 	}
+
+// 	// @var1: @return;
+// 	// .string-join(@string, ' ', 'dark-@{i}');
+// }});
+
+
+
+// // .kit-link-test {
+// //   margin: @return;
+// // }
+
+
+
+
+
+
+
+// // .for(10, {.callback(@i) {
+// // 	@tmp: @values;
+// // 	// @values: '@{tmp} + @{i}'
+// // 	@value: @i * 10;
+// // 	.string-append(@string, 'dark-@{i}');
+// // 	// @string+: 'dark-@{i}';
+// // 	@string: @return;
+
+// // }});
+
+
+// // .kit-link-test {
+// // 	string: @string;
+// // }
+
+
+
+// // .string-append(@string, @suffix) {
+// // 	@return: '@{string}@{suffix}';
+// // }
+
+// // .mixin-return(@param) {
+// // 	@mixinValue: 'hello';
+// // }
+
+
+// // .join(@list, @callback) {
+// // 	.join(@list, '', @callback);
+// // }
+
+// // .join(@list, @glue, @callback) {
+// //   .join(@string, @list, @glue, @n, @callback) when (@n >= 0) {
+// //     .return(@return, @n) when (@n = 0) {
+// //       @callback();
+// //     }
+// //     .return(e(@string), @n);
+// //     @add: extract(@list, @n);
+// //     .join('@{add}@{glue}@{string}', @list, @glue, (@n - 1), @callback);
+
+// //   }
+// //   @string: extract(@list, length(@list));
+// //   .join(@string, @list, @glue, (length(@list) - 1), @callback);
+// // }
